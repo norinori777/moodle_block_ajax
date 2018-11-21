@@ -54,7 +54,7 @@ class block_ajax extends block_base {
             $this->content->text = $this->config->text;
         }
 
-        $this->content = 'Hello World!';
+        $this->content->text = 'Hello World!';
         if (empty($currentcontext)) {
             return $this->content;
         }
