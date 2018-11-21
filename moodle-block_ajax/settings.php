@@ -15,37 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * HTML block caps.
+ * Ajax block caps.
  *
- * @package    block_html
- * @copyright  Mark Nelson <markn@moodle.com>
+ * @package    block_ajax
+ * @copyright  Daniel Neis <danielneis@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$capabilities = array(
+$settings->add(new admin_setting_heading('sampleheader',
+                                         get_string('headerconfig', 'block_ajax'),
+                                         get_string('descconfig', 'block_ajax')));
 
-    'block/html:myaddinstance' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'user' => CAP_ALLOW
-        ),
-
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
-
-    'block/html:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
-
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_BLOCK,
-        'archetypes' => array(
-            'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
-        ),
-
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
-);
+$settings->add(new admin_setting_configcheckbox('ajax/foo',
+                                                get_string('labelfoo', 'block_ajax'),
+                                                get_string('descfoo', 'block_ajax'),
+                                                '0'));

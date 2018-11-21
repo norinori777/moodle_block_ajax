@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,15 +16,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * Strings for component 'block_ajax', language 'en'
  *
- * @package    block_html
- * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_ajax
+ * @copyright Daniel Neis <danielneis@gmail.com>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version   = 2018051400;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2018050800;        // Requires this Moodle version
-$plugin->component = 'block_html';      // Full name of the plugin (used for diagnostics)
+$string['blockstring'] = 'Block string';
+$string['descconfig'] = 'Description of the config section';
+$string['descfoo'] = 'Config description';
+$string['headerconfig'] = 'Config section header';
+$string['labelfoo'] = 'Config label';
+$string['ajax:addinstance'] = 'Add a ajax block';
+$string['ajax:myaddinstance'] = 'Add a ajax block to my moodle';
+$string['pluginname'] = 'ajaxblock';
