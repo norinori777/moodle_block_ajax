@@ -31,7 +31,7 @@ class block_ajax extends block_base {
     }
 
     function get_content() {
-        global $CFG, $OUTPUT;
+        global $PAGE, $CFG, $OUTPUT;
 
         if ($this->content !== null) {
             return $this->content;
@@ -41,6 +41,16 @@ class block_ajax extends block_base {
             $this->content = '';
             return $this->content;
         }
+
+        // $jsarguments = array();
+        // $jsmodule = array(
+        //     'name'     	=> 'ilp_ajax_addnew',
+        //     'fullpath' 	=> '/blocks/ajax/block_ajax.js',
+        //     'requires'  	=> array('io','io-form', 'json-parse', 'json-stringify', 'json', 'base', 'node')
+        // );
+
+        // $PAGE->requires->js_init_call('M.block_ajax.init', $jsarguments, true, $jsmodule);
+        $PAGE->requires->js_call_amd('block_ajax/block_controll_ajax', 'init');
 
         $this->content = new stdClass();
         $this->content->items = array();
@@ -54,7 +64,16 @@ class block_ajax extends block_base {
             $this->content->text = $this->config->text;
         }
 
-        $this->content->text = 'Hello World!';
+        $return_ajax_url = $CFG->wwwroot . '/blocks/ajax/return_ajax.php';
+        $this->content->text = html_writer::tag('span', 'Click to agree', array(
+            'id'=>'agree',
+            'data-url'=> $return_ajax_url
+            ));
+        $this->content->text .= html_writer::tag('span', 'Click to disagree', array(
+            'id'=>'disagree',
+            'data-url'=> $return_ajax_url
+            ));
+        
         if (empty($currentcontext)) {
             return $this->content;
         }

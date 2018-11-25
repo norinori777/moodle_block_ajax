@@ -31,3 +31,5 @@ $string['labelfoo'] = 'Config label';
 $string['ajax:addinstance'] = 'Add a ajax block';
 $string['ajax:myaddinstance'] = 'Add a ajax block to my moodle';
 $string['pluginname'] = 'ajaxblock';
+$string['agree'] = 'agree';
+$string['disagree'] = 'disagree';
